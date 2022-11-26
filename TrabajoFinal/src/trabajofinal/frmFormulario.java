@@ -6,7 +6,8 @@
 package trabajofinal;
 
 import java.util.ArrayList;
-
+import javax.swing.*;
+import java.awt.Frame;
 /**
  *
  * @author Juliana
@@ -78,6 +79,11 @@ public class frmFormulario extends javax.swing.JInternalFrame {
         });
 
         btnEliminar.setText("Eliminar");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
 
         btnBorrar.setText("Borrar campos");
         btnBorrar.addActionListener(new java.awt.event.ActionListener() {
@@ -87,6 +93,11 @@ public class frmFormulario extends javax.swing.JInternalFrame {
         });
 
         btnModificar.setText("Modificar");
+        btnModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModificarActionPerformed(evt);
+            }
+        });
 
         btnSalir.setText("Salir");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -193,6 +204,8 @@ public class frmFormulario extends javax.swing.JInternalFrame {
 	ArrayList nuevaLista= new ArrayList<>();
 	nuevaLista.add(persona);
 	ListaPersona.añadirArchivo(nuevaLista);
+        txtR.setText("El contacto fue agregado");
+        
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
@@ -203,6 +216,7 @@ public class frmFormulario extends javax.swing.JInternalFrame {
         txtCedula.setText("");
         txtNombre.setText("");
         txtApellido.setText("");
+        txtR.setText("");
     }//GEN-LAST:event_btnBorrarActionPerformed
 
     private void txtCedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCedulaActionPerformed
@@ -242,6 +256,22 @@ public class frmFormulario extends javax.swing.JInternalFrame {
     private void txtRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtRActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        String S = txtCedula.getText()+","+txtNombre.getText()+","+txtApellido.getText();
+        ListaPersona.EliminarPersona(S);
+        txtR.setText("El contacto fue eliminado");
+    }//GEN-LAST:event_btnEliminarActionPerformed
+
+    private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
+        Frame f= JOptionPane.getFrameForComponent(this);
+        frmModificacion dialog = new frmModificacion(f,true);
+        //modi.getContentPane().add(btnModificar);
+        dialog.setVisible(true);
+        
+        String S = txtCedula.getText()+","+txtNombre.getText()+","+txtApellido.getText();
+        ListaPersona.EliminarPersona(S);
+    }//GEN-LAST:event_btnModificarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

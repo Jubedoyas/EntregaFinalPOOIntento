@@ -52,7 +52,7 @@ public class VentPrincipal extends javax.swing.JFrame {
 
         MnArchivo.setText("Archivo");
 
-        MnItForm.setText("Form");
+        MnItForm.setText("Formulario");
         MnItForm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MnItFormActionPerformed(evt);

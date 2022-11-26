@@ -11,7 +11,7 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="MnItForm">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Form"/>
+                <Property name="text" type="java.lang.String" value="Formulario"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MnItFormActionPerformed"/>
